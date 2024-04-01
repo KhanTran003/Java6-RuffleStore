@@ -9,15 +9,15 @@
             <div class="product-image-wrapper">
                 <div class="single-products">
                     <div class="productinfo text-center">
-                        <img th:src="@{|/assets/images/shop/${p.image}|}" alt="" />
+                        <a th:href="@{|/product/detail/${p.id}|}"><img th:src="@{|/assets/images/shop/${p.image}|}" alt="" /></a>
                         <h2>$[[${p.price}]]</h2>
                         <p th:utext="${p.name}"></p>
-                        <a th:href="@{|/product/detail/${p.id}|}" class="btn btn-default add-to-cart"><i class="fa fa-eye"></i>Chi tiết</a>
+                        <a th:attr="ng-click=@{|cart.add(${p.id})|}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                     </div>
                 </div>
                 <div class="choose">
                     <ul class="nav nav-pills nav-justified">
-                        <li><a href=""><i class="fa fa-plus-square"></i>Add to Cart</a></li>
+                        <li><a href=""><i class="fa fa-plus-square"></i>Favorite</a></li>
                     </ul>
                 </div>
             </div>
